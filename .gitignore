@@ -1,0 +1,28 @@
+# Diretórios e arquivos criados pelo Terraform
+.terraform/
+.terraform.lock.hcl
+
+# Arquivos de estado
+terraform.tfstate
+terraform.tfstate.backup
+
+# Qualquer arquivo .tfvars (geralmente contém valores sensíveis)
+*.tfvars
+*.tfvars.json
+
+# Arquivos de plano (gerados por `terraform plan -out`)
+*.tfplan
+
+# Crash logs
+crash.log
+
+# Logs e arquivos temporários
+*.log
+*.bak
+*.tmp
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo

@@ -1,0 +1,55 @@
+# steps:
+#   # Build da imagem Docker
+#   - name: 'gcr.io/cloud-builders/docker'
+#     args: [
+#       'build',
+#       '-t',
+#       '${_ARTIFACT_REGISTRY_HOSTNAME}/${PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:$SHORT_SHA',
+#       '.'
+#     ]
+
+#   # Push para Artifact Registry
+#   - name: 'gcr.io/cloud-builders/docker'
+#     args: [
+#       'push',
+#       '${_ARTIFACT_REGISTRY_HOSTNAME}/${PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:$SHORT_SHA'
+#     ]
+
+# images:
+#   - '${_ARTIFACT_REGISTRY_HOSTNAME}/${PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:$SHORT_SHA'
+
+# substitutions:
+#   _REPO_NAME: "python-app-repo"
+#   _IMAGE_NAME: "python-app"
+#   _ARTIFACT_REGISTRY_HOSTNAME: "REGION-docker.pkg.dev" # será substituído por terraform
+
+# steps:
+#   # Build da imagem Docker
+#   - name: 'gcr.io/cloud-builders/docker'
+#     args: [
+#       'build',
+#       '-t',
+#       '${_ARTIFACT_REGISTRY_HOSTNAME}/${PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:$SHORT_SHA',
+#       './app'
+#     ]
+
+#   # Push para Artifact Registry
+#   - name: 'gcr.io/cloud-builders/docker'
+#     args: [
+#       'push',
+#       '${_ARTIFACT_REGISTRY_HOSTNAME}/${PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:$SHORT_SHA'
+#     ]
+
+# images:
+#   - '${_ARTIFACT_REGISTRY_HOSTNAME}/${PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:$SHORT_SHA'
+
+# substitutions:
+#   # Repositório no Artifact Registry
+#   _REPO_NAME: "python-docker-repo"
+
+#   # Nome da imagem
+#   _IMAGE_NAME: "python-app"
+
+#   # Hostname do Artifact Registry (exemplo: us-central1-docker.pkg.dev)
+#   _ARTIFACT_REGISTRY_HOSTNAME: "REGION-docker.pkg.dev"
+

@@ -24,7 +24,7 @@ resource "google_compute_instance" "container_vm" {
           - name: ${var.image_name}
             image: ${var.region}-docker.pkg.dev/${var.project_id}/${var.artifact_repo}/${var.image_name}:${var.image_tag}
             ports:
-              - containerPort: 80
+              - containerPort: 8080
             stdin: false
             tty: false
         restartPolicy: Always
@@ -39,7 +39,7 @@ resource "google_compute_instance" "container_vm" {
   }
 
   depends_on = [
-    google_artifact_registry_repository.devops_repo,
+    #google_artifact_registry_repository.devops_repo,
     google_compute_firewall.allow_http
   ]
 }
@@ -64,7 +64,7 @@ resource "google_compute_firewall" "allow_http" {
 
   allow {
     protocol = "tcp"
-    ports    = ["80"]
+    ports    = ["80", "8080"]
   }
 
   source_ranges = ["0.0.0.0/0"]

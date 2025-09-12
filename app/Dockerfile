@@ -19,7 +19,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Define porta exposta
-EXPOSE 80
+EXPOSE 8080
 
 # Comando para rodar o app
 CMD ["python", "main.py"]
+
+
